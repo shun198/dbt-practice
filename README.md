@@ -242,3 +242,45 @@ Notes -
 03:03:54
 03:03:54  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
 ```
+
+## DB との接続テストおよびデバッグ用の情報の表示
+
+```
+dbt debug
+03:12:50  Running with dbt=1.9.2
+03:12:50  dbt version: 1.9.2
+03:12:50  python version: 3.11.11
+03:12:50  python path: /Users/shun/dbt-practice/application/.venv/bin/python3
+03:12:50  os info: macOS-14.6.1-x86_64-i386-64bit
+03:12:50  Using profiles dir at /Users/shun/dbt-practice/application
+03:12:50  Using profiles.yml file at /Users/shun/dbt-practice/application/profiles.yml
+03:12:50  Using dbt_project.yml file at /Users/shun/dbt-practice/application/dbt_project.yml
+03:12:50  adapter type: postgres
+03:12:50  adapter version: 1.9.0
+03:12:51  Configuration:
+03:12:51    profiles.yml file [OK found and valid]
+03:12:51    dbt_project.yml file [OK found and valid]
+03:12:51  Required dependencies:
+03:12:51   - git [OK found]
+
+03:12:51  Connection:
+03:12:51    host: localhost
+03:12:51    port: 5432
+03:12:51    user: postgres
+03:12:51    database: postgres
+03:12:51    schema: dbt_dev
+03:12:51    connect_timeout: 10
+03:12:51    role: None
+03:12:51    search_path: None
+03:12:51    keepalives_idle: 0
+03:12:51    sslmode: None
+03:12:51    sslcert: None
+03:12:51    sslkey: None
+03:12:51    sslrootcert: None
+03:12:51    application_name: dbt
+03:12:51    retries: 1
+03:12:51  Registered adapter: postgres=1.9.0
+03:12:51    Connection test: [OK connection ok]
+
+03:12:51  All checks passed!
+```
