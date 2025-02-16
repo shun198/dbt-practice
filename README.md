@@ -102,3 +102,20 @@ postgres=# \dv dbt_dev.*
  dbt_dev | user_name | view | postgres
 (1 row)
 ```
+
+## dbt 用パッケージのインストール
+
+```
+dbt deps
+02:14:57  Running with dbt=1.9.2
+02:14:58  Updating lock file in file path: /Users/shun/dbt-practice/application/package-lock.yml
+02:14:58  Installing dbt-labs/dbt_utils
+02:14:58  Installed from version 1.3.0
+02:14:58  Up to date!
+02:14:58  Installing elementary-data/elementary
+02:14:59  Installed from version 0.16.1
+02:14:59  Updated version available: 0.16.4
+02:14:59
+02:14:59  Updates available for packages: ['elementary-data/elementary']
+Update your versions in packages.yml, then run dbt deps
+```

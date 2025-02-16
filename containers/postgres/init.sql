@@ -1,4 +1,5 @@
 -- スキーマ作成
+-- Postgresではschemaがデフォルトでpublicになるため、dbt用のschemaを作成する
 CREATE SCHEMA dbt_dev;
 
 -- Users テーブルの作成
