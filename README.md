@@ -82,7 +82,7 @@ There are 1 unused configuration paths:
 view が作成されていることを確認できました
 
 ```
-postgres=# select \* from dbt_dev.user_name;
+postgres=# select * from dbt_dev.user_name;
 id | full_name
 ----+---------------
 1 | John Doe
