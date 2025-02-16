@@ -1,0 +1,24 @@
+# https://docs.getdbt.com/reference/dbt_project.yml
+# プロジェクト名
+name: 'dbt_practice'
+config-version: 2
+version: '1.0.0'
+
+# プロファイル、DWの接続設定名
+profile: 'dbt_practice'
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# dbt コマンドの出力先パス
+target-path: "target"
+# dbt clean コマンドを実行したときに削除対象のディレクトリ
+clean-targets: [target, dbt_packages]
+
+models:
+  application:
+    example:
