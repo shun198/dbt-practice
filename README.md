@@ -204,3 +204,41 @@ Notes -
 02:40:46
 02:40:46  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
 ```
+
+## テストの実行
+
+```
+dbt test
+03:03:51  Running with dbt=1.9.2
+03:03:51  Registered adapter: postgres=1.9.0
+03:03:52  Found 30 models, 2 seeds, 2 operations, 1 test, 1235 macros
+03:03:52
+03:03:52  Concurrency: 1 threads (target='dev')
+03:03:52
+03:03:52
+IMPORTANT - Starting from dbt 1.8, users must explicitly allow packages to override materializations.
+Elementary requires this ability to support collection of samples and failed row count for dbt tests.
+Please add the following flag to dbt_project.yml to allow it:
+
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
+
+Notes -
+* This is a temporary measure that will result in a deprecation warning, please ignore it for now. Elementary is working with the dbt-core team on a more permanent solution.
+* This message can be muted by setting the 'mute_ensure_materialization_override' var to true.
+
+03:03:52  1 of 1 START hook: elementary.on-run-start.0 ................................... [RUN]
+03:03:52  1 of 1 OK hook: elementary.on-run-start.0 ...................................... [OK in 0.10s]
+03:03:52
+03:03:52  1 of 1 START test user_name_is_not_null ........................................ [RUN]
+03:03:52  1 of 1 PASS user_name_is_not_null .............................................. [PASS in 0.07s]
+03:03:52
+03:03:54  1 of 1 START hook: elementary.on-run-end.0 ..................................... [RUN]
+03:03:54  1 of 1 OK hook: elementary.on-run-end.0 ........................................ [OK in 1.65s]
+03:03:54
+03:03:54  Finished running 2 project hooks, 1 test in 0 hours 0 minutes and 2.08 seconds (2.08s).
+03:03:54
+03:03:54  Completed successfully
+03:03:54
+03:03:54  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+```
