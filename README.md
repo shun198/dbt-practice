@@ -119,3 +119,88 @@ dbt deps
 02:14:59  Updates available for packages: ['elementary-data/elementary']
 Update your versions in packages.yml, then run dbt deps
 ```
+
+## dbt ドキュメントの生成と閲覧
+
+```
+dbt docs generate
+02:23:11  Running with dbt=1.9.2
+02:23:12  Registered adapter: postgres=1.9.0
+02:23:12  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.application
+02:23:12  Found 30 models, 2 operations, 1235 macros
+02:23:12
+02:23:12  Concurrency: 1 threads (target='dev')
+02:23:12
+02:23:13
+IMPORTANT - Starting from dbt 1.8, users must explicitly allow packages to override materializations.
+Elementary requires this ability to support collection of samples and failed row count for dbt tests.
+Please add the following flag to dbt_project.yml to allow it:
+
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
+
+Notes -
+* This is a temporary measure that will result in a deprecation warning, please ignore it for now. Elementary is working with the dbt-core team on a more permanent solution.
+* This message can be muted by setting the 'mute_ensure_materialization_override' var to true.
+
+02:23:14  Building catalog
+02:23:14  Catalog written to /Users/shun/dbt-practice/application/target/catalog.json
+dbt docs serve
+02:23:32  Running with dbt=1.9.2
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [16/Feb/2025 11:23:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Feb/2025 11:23:33] "GET /manifest.json?cb=1739672613865 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Feb/2025 11:23:33] "GET /catalog.json?cb=1739672613865 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Feb/2025 11:23:35] code 404, message File not found
+127.0.0.1 - - [16/Feb/2025 11:23:35] "GET /$%7Brequire('./assets/favicons/favicon.ico')%7D HTTP/1.1" 404 -
+```
+
+## CSV 経由でテストデータを投入
+
+```
+dbt seed
+02:40:42  Running with dbt=1.9.2
+02:40:43  Registered adapter: postgres=1.9.0
+02:40:44  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.application
+02:40:44  Found 30 models, 2 operations, 2 seeds, 1235 macros
+02:40:44
+02:40:44  Concurrency: 1 threads (target='dev')
+02:40:44
+02:40:44
+IMPORTANT - Starting from dbt 1.8, users must explicitly allow packages to override materializations.
+Elementary requires this ability to support collection of samples and failed row count for dbt tests.
+Please add the following flag to dbt_project.yml to allow it:
+
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
+
+Notes -
+* This is a temporary measure that will result in a deprecation warning, please ignore it for now. Elementary is working with the dbt-core team on a more permanent solution.
+* This message can be muted by setting the 'mute_ensure_materialization_override' var to true.
+
+02:40:44  1 of 1 START hook: elementary.on-run-start.0 ................................... [RUN]
+02:40:44  1 of 1 OK hook: elementary.on-run-start.0 ...................................... [OK in 0.06s]
+02:40:44
+02:40:44  1 of 2 START seed file dbt_dev.todos ........................................... [RUN]
+02:40:44  1 of 2 OK loaded seed file dbt_dev.todos ....................................... [INSERT 3 in 0.14s]
+02:40:44  2 of 2 START seed file dbt_dev.users ........................................... [RUN]
+02:40:44  2 of 2 OK loaded seed file dbt_dev.users ....................................... [INSERT 3 in 0.07s]
+02:40:44
+02:40:46  1 of 1 START hook: elementary.on-run-end.0 ..................................... [RUN]
+02:40:46  1 of 1 OK hook: elementary.on-run-end.0 ........................................ [OK in 1.26s]
+02:40:46
+02:40:46  Finished running 2 project hooks, 2 seeds in 0 hours 0 minutes and 1.80 seconds (1.80s).
+02:40:46
+02:40:46  Completed successfully
+02:40:46
+02:40:46  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+```

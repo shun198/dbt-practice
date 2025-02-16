@@ -1,0 +1,4 @@
+email,username,first_name,last_name,password,is_active,role,phone_number
+user1@example.com,user1,John,Doe,hashedpassword1,TRUE,admin,123-456-7890
+user2@example.com,user2,Jane,Smith,hashedpassword2,TRUE,user,234-567-8901
+user3@example.com,user3,Alice,Johnson,hashedpassword3,FALSE,user,345-678-9012
