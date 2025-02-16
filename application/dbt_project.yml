@@ -20,7 +20,5 @@ target-path: "target"
 clean-targets: [target, dbt_packages]
 
 models:
-  application:
+  dbt_practice:
     schema: dbt_dev
-    # オプションで、overwrite: false を追加することもできる
-    overwrite: false
