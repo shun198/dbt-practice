@@ -1,8 +1,8 @@
-FROM python3.11
+FROM ghcr.io/astral-sh/uv:python3.11-alpine
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 COPY application/pyproject.toml /code/
-RUN pip install --upgrade pip && pip install poetry
-RUN poetry install
+# https://docs.astral.sh/uv/reference/cli/#uv-sync
+RUN uv sync
 COPY application/ /code/
