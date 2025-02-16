@@ -1,5 +1,8 @@
+-- スキーマ作成
+CREATE SCHEMA dbt_dev;
+
 -- Users テーブルの作成
-CREATE TABLE users (
+CREATE TABLE "postgres"."dbt_dev"."users" (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
     username VARCHAR(255) UNIQUE NOT NULL,
@@ -12,7 +15,7 @@ CREATE TABLE users (
 );
 
 -- Todos テーブルの作成
-CREATE TABLE todos (
+CREATE TABLE "postgres"."dbt_dev"."todos" (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
@@ -21,14 +24,14 @@ CREATE TABLE todos (
 );
 
 -- Users テーブルにテストデータを挿入
-INSERT INTO users (email, username, first_name, last_name, password, is_active, role, phone_number)
+INSERT INTO "postgres"."dbt_dev"."users" (email, username, first_name, last_name, password, is_active, role, phone_number)
 VALUES
     ('user1@example.com', 'user1', 'John', 'Doe', 'hashedpassword1', TRUE, 'admin', '123-456-7890'),
     ('user2@example.com', 'user2', 'Jane', 'Smith', 'hashedpassword2', TRUE, 'user', '234-567-8901'),
     ('user3@example.com', 'user3', 'Alice', 'Johnson', 'hashedpassword3', FALSE, 'user', '345-678-9012');
 
 -- Todos テーブルにテストデータを挿入
-INSERT INTO todos (title, description, priority, complete)
+INSERT INTO "postgres"."dbt_dev"."todos" (title, description, priority, complete)
 VALUES
     ('Buy groceries', 'Buy milk, eggs, and bread', 2, FALSE),
     ('Finish project', 'Complete the database migration', 1, FALSE),

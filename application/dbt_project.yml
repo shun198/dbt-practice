@@ -21,4 +21,4 @@ clean-targets: [target, dbt_packages]
 
 models:
   application:
-    example:
+    schema: dbt_dev

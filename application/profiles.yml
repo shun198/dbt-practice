@@ -8,7 +8,7 @@ dbt_practice:
       password: postgres
       port: 5432
       dbname: postgres
-      schema: public
+      schema: dbt_dev
       threads: 1
       keepalives_idle: 0
       connect_timeout: 10
