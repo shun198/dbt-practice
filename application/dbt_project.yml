@@ -26,6 +26,8 @@ models:
   elementary:
     +schema: elementary
 
+# dbt1.8以降から必須
 flags:
+  # https://docs.elementary-data.com/oss/general/troubleshooting#warning-installed-package-elementary-is-overriding-the-built-in-materialization-xxx
   require_explicit_package_overrides_for_builtin_materializations: False
   source_freshness_run_project_hooks: True
