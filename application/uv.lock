@@ -75,7 +75,7 @@ dev = [
 requires-dist = [
     { name = "dbt-core", specifier = ">=1.9.2" },
     { name = "dbt-postgres", specifier = ">=1.9.0" },
-    { name = "elementary-data", specifier = ">=0.16.2" },
+    { name = "elementary-data", specifier = ">=0.16.4" },
     { name = "setuptools", specifier = ">=75.8.0" },
 ]
 
@@ -495,7 +495,7 @@ wheels = [
 
 [[package]]
 name = "elementary-data"
-version = "0.16.2"
+version = "0.16.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "alive-progress" },
@@ -519,9 +519,9 @@ dependencies = [
     { name = "slack-sdk" },
     { name = "tabulate" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/a2/78a09af7362e7900b6b77f6f01d92cbadb6fa3f7172b86b50259f9f6099a/elementary_data-0.16.2.tar.gz", hash = "sha256:731849eb3675df5dbc87e7992cccc267012ef43913e6f9d8c123ff43c4998dd1", size = 1117206 }
+sdist = { url = "https://files.pythonhosted.org/packages/10/a2/78a09af7362e7900b6b77f6f01d92cbadb6fa3f7172b86b50259f9f6099a/elementary_data-0.16.4.tar.gz", hash = "sha256:731849eb3675df5dbc87e7992cccc267012ef43913e6f9d8c123ff43c4998dd1", size = 1117206 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/b3/04a58ee2493365cd6c275e6a7c1d24b35cb5a7aa2086d4854f7078e7dfbd/elementary_data-0.16.2-py3-none-any.whl", hash = "sha256:f847701efc6a99bcee9ee81f82471aa11537c315a730477266b785e2ebc164eb", size = 1191252 },
+    { url = "https://files.pythonhosted.org/packages/2e/b3/04a58ee2493365cd6c275e6a7c1d24b35cb5a7aa2086d4854f7078e7dfbd/elementary_data-0.16.4-py3-none-any.whl", hash = "sha256:f847701efc6a99bcee9ee81f82471aa11537c315a730477266b785e2ebc164eb", size = 1191252 },
 ]
 
 [[package]]

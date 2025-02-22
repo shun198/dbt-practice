@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: user_name
+    description: "ユーザー名情報を格納するテーブル"
+    columns:
+      - name: full_name
+        description: "フルネーム"
+        tests:
+          - not_null

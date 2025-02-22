@@ -172,3 +172,4 @@ cython_debug/
 
 dbt_packages
 edr_target
+.edr

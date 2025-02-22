@@ -1,5 +1,4 @@
 dbt_practice:
-  target: dev
   outputs:
     dev:
       dbname: postgres
@@ -10,8 +9,8 @@ dbt_practice:
       threads: 1
       type: postgres
       user: postgres
-elementary:
   target: dev
+elementary:
   outputs:
     dev:
       connect_timeout: 10
@@ -20,7 +19,8 @@ elementary:
       keepalives_idle: 0
       password: postgres
       port: 5432
-      schema: dbt_dev
+      schema: dbt_dev_elementary
       threads: 1
       type: postgres
       user: postgres
+  target: dev
