@@ -284,3 +284,20 @@ dbt debug
 
 03:12:51  All checks passed!
 ```
+
+## テストレポートの作成
+
+Elementary を使ってテスト結果の Report を作成できる
+--profiles-dir がないと profiles.yml の場所を Elementary が認識できないので注意
+
+```
+edr report --profiles-dir .
+```
+
+## Slack 通知の送信
+
+テスト結果を Slack 通知できる
+
+```
+edr send-report --slack-token "token" --slack-channel-name "channel" --profiles-dir .
+```
