@@ -22,3 +22,6 @@ clean-targets: [target, dbt_packages]
 models:
   dbt_practice:
     schema: dbt_dev
+# elementaryモデルのテーブルがelementaryスキーマに作成される
+  elementary:
+    +schema: elementary

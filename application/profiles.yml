@@ -2,35 +2,25 @@ dbt_practice:
   target: dev
   outputs:
     dev:
-      type: postgres
-      host: localhost
-      user: postgres
-      password: postgres
-      port: 5432
       dbname: postgres
+      host: localhost
+      pass: postgres
+      port: 5432
       schema: dbt_dev
       threads: 1
-      keepalives_idle: 0
-      connect_timeout: 10
-
-## POSTGRES ##
-## By default, edr expects the profile name 'elementary'.      ##
-## Configure the database and schema of elementary models.     ##
-## Check where 'elementary_test_results' is to find it.        ##
-
-elementary:
-  outputs:
-    default:
       type: postgres
-      host: localhost
       user: postgres
+elementary:
+  target: dev
+  outputs:
+    dev:
+      connect_timeout: 10
+      dbname: postgres
+      host: localhost
+      keepalives_idle: 0
       password: postgres
       port: 5432
-      dbname: postgres
-      schema: dbt_dev # elementary schema, usually [schema name]_elementary
-      threads: 1 # 1 or more
-      keepalives_idle: 0 # default 0 seconds
-      connect_timeout: 10 # default 10 seconds
-      # search_path: public # optional, not recommended
-      # role: [optional, set the role dbt assumes when executing queries]
-      # sslmode: [optional, set the sslmode used to connect to the database]
+      schema: dbt_dev
+      threads: 1
+      type: postgres
+      user: postgres
